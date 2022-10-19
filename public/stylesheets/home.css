@@ -1,13 +1,18 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url(HDHawaiianBeach.jpg);
+    color: #000;
+
+}
+
+
 #siHeadDiv{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #siInputDiv{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }

@@ -1,0 +1,33 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url(HDHawaiianBeach.jpg);
+    color: #000;
+    display: flex;
+    justify-items: center;
+}
+
+#rectangle{
+    width: 1920px;
+    height:1080px;
+    background:white;
+
+}
+
+#logHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+th{
+    text-align: left;
+}
+
+table, th, td {
+    border:1px solid #000;
+}
