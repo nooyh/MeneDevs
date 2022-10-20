@@ -25,7 +25,7 @@ module.exports = class PassportInit extends UserDB {
      * @returns {undefined} Nothin
      */
     async _authenticate(email, pass, done) {
-        const user = await this.find(email, pass);
+        const user = await this.findAccount(email, pass);
 
         if (!user.password) return done(null, false, { Message: "Incorrect email address or password" });
         done(null, user);

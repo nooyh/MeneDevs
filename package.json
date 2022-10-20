@@ -7,6 +7,7 @@
     "devStart": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.193.0",
     "aws-sdk": "^2.1233.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
