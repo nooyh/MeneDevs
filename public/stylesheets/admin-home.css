@@ -1,0 +1,35 @@
+body {
+    background-image: url("backgroud.jpg");
+    background-attachment: fixed;
+}
+.flex-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons :hover {
+    filter: brightness(90%);
+}
+
+#formsDir {
+    background:    #9fc5e8;
+    border-radius: 11px;
+    padding:       22px 38px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 26px/1 "Open Sans", sans-serif;
+    text-align:    center;
+}
+
+#logsDir {
+    background:    #9fc5e8;
+    border-radius: 11px;
+    padding:       22px 87px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 26px/1 "Open Sans", sans-serif;
+    text-align:    center;  
+}
