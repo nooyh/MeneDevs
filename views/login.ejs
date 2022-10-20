@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
@@ -12,7 +12,7 @@
     <!-----Navigation Bar----->
     <section id="navBar">
       <div id="bar">
-        <img id="hidotLogo" height="50px" src="../public/images/output-onlinepngtools.png" />
+        <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
 
         <div class="content">
           <h3>Home</h3>
@@ -25,25 +25,17 @@
         <div id="account">
           <img
             id="accountLogo"
-            src="../public/images/account-logo.png"
-            height="50px"
+            src="/images/account-logo.jpg"
+            height="40px"
             style="padding-top: 20px"
           />
         </div>
       </div>
     </section>
-    <h1>
-      Login
-      <p>
-        Don't have an account?
-        <a
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Contact TOD</a
-        >
-        for one.
-      </p>
+
+    <main>
+      <h1>Welcome Back!</h1>
+      <h2>Please log in</h2>
       <form action="/login" method="post">
         <input type="text" placeholder="Enter email" name="email" /><br />
         <input
@@ -51,8 +43,20 @@
           placeholder="Enter password"
           name="pass"
         /><br /><br />
+        <div id="signup-container">
+          <p>
+            Don't have an account?
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Sign up</a
+            >
+          </p>
+        </div>
+
         <button type="submit">Login</button>
       </form>
-    </h1>
+    </main>
   </body>
 </html>
