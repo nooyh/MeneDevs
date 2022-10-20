@@ -1,87 +1,75 @@
-module.exports = class UserDB {
+const DB = require('./dynamo-db');
+
+module.exports = class UserDB extends DB {
     /**
-     * Loads the AWS DynamoDB
+     * Loads user db in dynamo
      */
     constructor() {
-        const AWS = require('aws-sdk');
+        super();
 
-        AWS.config.update({
-            region: process.env.AWS_REGION,
-            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        });
-
-        this.dynamodb = new AWS.DynamoDB();
         this.TABLE_NAME = 'Users';
         this.PARTITION_KEY = 'email';
         this.SORT_KEY = 'password';
     }
 
     /**
-     * Looks for a match in the DB with the same email and pass
-     * @param {String} email The email of the user
-     * @param {String} password The password of the user
-     * @returns {Promise} AWS promised object
+     * Looks for an account with the same email and password given
+     * @param {String} email The email of the acc
+     * @param {String} password The password of the acc
+     * @returns {Promise} promised boolean
      */
-    find(email, password) {
-        return this._baseUpdate('get', email, password);
-    }
+    async findAccount(email, password) {
+        if (typeof email != 'string') throw new Error('Expected email to be a string');
+        if (typeof password != 'string') throw new Error('Expected password to be a string');
 
-    /**
-     * Shoves a new user into the DB
-     * @param {String} email The email of the user
-     * @param {String} password The password of the user
-     * @returns {Promise} AWS promised object
-     */
-    put(email, password) {
-        return this._baseUpdate('put', email, password);
-    }
-
-    /**
-     * Removes the user from the DB
-     * @param {String} email The email of the user
-     * @param {String} password The password of the user
-     * @returns {Promise} AWS promised object
-     */
-    delete(email, password) {
-        return this._baseUpdate('delete', email, password);
-    }
-
-    /**
-     * The base method for putting and getting items accounts in the DB
-     * @param {String} method Whether you want to insert or get users
-     * @param {String} email The email of the user
-     * @param {String} password The password of the user
-     * @returns {Promise} AWS promised object
-     */
-    _baseUpdate(method, email, password) {
-        const params = {
+        return this.find({
             TableName: this.TABLE_NAME,
-            [method == 'put' ? 'Item' : 'Key']: {
+            Key: {
                 [this.PARTITION_KEY]: { S: email },
                 [this.SORT_KEY]: { S: password },
             },
-        };
-
-        return this._parse(method, this.dynamodb[`${method}Item`](params).promise());
+        });
     }
 
     /**
-     * Simplifies the aws object response
-     * @param {Object} awsResponse Whatever aws responds with
-     * @returns {?Object}  Better user object or just nothing
+     * Creates a new account with the given credentials
+     * @param {String} email The acc email
+     * @param {String} password The acc password
+     * @param {String} type States whether this is an agency or admin acc
      */
-    _parse(method, awsResponse) {
-        return new Promise(async (resolve, reject) => {
-            awsResponse = await awsResponse;
+    addAccount(email, password, type) {
+        if (typeof email != 'string') throw new Error('Expected email to be a string');
+        if (typeof password != 'string') throw new Error('Expected password to be a string');
+        if (typeof type != 'string') throw new Error('Expected type to be a string');
 
-            const user = {
-                email: awsResponse?.Item?.email?.S,
-                password: awsResponse?.Item?.password?.S,
-                type: awsResponse?.Item?.type?.S,
-            };
+        this.put({
+            TableName: this.TABLE_NAME,
+            Item: {
+                [this.PARTITION_KEY]: { S: email },
+                [this.SORT_KEY]: { S: password },
+                type: { S: type },
+            },
+        });
+    }
 
-            resolve(method == 'get' ? user : null);
+    /**
+     * Removes account from the database
+     * @param {String} email The acc email
+     * @param {String} password The acc password
+     * @param {?String} type (optional) States whether this is an agency or admin acc
+     */
+    removeAccount(email, password, type) {
+        if (typeof email != 'string') throw new Error('Expected email to be a string');
+        if (typeof password !=  'string') throw new Error('Expected password to be a string');
+        if (type != null && typeof type != 'undefined' && typeof type != 'string') throw new Error('Expected type to be a string, undefined, or null');
+
+        this.remove({
+            TableName: this.TABLE_NAME,
+            Key: {
+                [this.PARTITION_KEY]: { S: email },
+                [this.SORT_KEY]: { S: password },
+                type: type ? { S: type } : null,
+            },
         });
     }
 };
