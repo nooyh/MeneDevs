@@ -22,7 +22,7 @@ module.exports = class UserDB extends DB {
         if (typeof email != 'string') throw new Error('Expected email to be a string');
         if (typeof password != 'string') throw new Error('Expected password to be a string');
 
-        return this.find({
+        return await this.find({
             TableName: this.TABLE_NAME,
             Key: {
                 [this.PARTITION_KEY]: { S: email },
