@@ -1,0 +1,17 @@
+.form-button{
+    display:flex;
+    justify-content:center;
+    margin-bottom: 10px;
+}
+
+.form-button button {
+    padding: 10px 25px;
+    width: 15%;
+    height:50px;
+    margin:5px;
+    font-size:20px;
+    background:#3296ff;
+    border-style:none;
+    border-radius:6px;
+}
+
