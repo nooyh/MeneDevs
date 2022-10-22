@@ -1,3 +1,4 @@
+/*---Global Style---*/
 @font-face {
     font-family: "source-sans";
     src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
@@ -17,7 +18,7 @@ body {
 }
 
 /*-----Navigation Bar Styling-----*/
-#navBar img {
+#nav-bar img {
     margin: none;
     padding-top: 10px;
 }
@@ -41,6 +42,7 @@ body {
 }
 
 #account {
+    display:flex;
     margin-left: auto;
     padding-right: 20px;
 }
