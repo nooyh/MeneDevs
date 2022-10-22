@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
     <!-----Navigation Bar----->
-    <section id="navBar">
+    <section id="nav-bar">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
             <div class="content">
@@ -27,15 +27,15 @@
             </div>
         </div>
     </section>
-    
-    <div id="siNavBar">
-        <nav><a href=""></a><a href=""></a></nav>
-    </div>
-    <div id="siHeadDiv">
-        <h1 id="siHeader">Welcome to the TOD Project Reporting Site</h1>
-        <p>The Office of Planning and Sustainable Development</p>
-        <p>You are using an <%= accountType %> account.</p>
-    </div>
+    <main>
+        <div id="title-container">
+            <h1 id="title">Welcome to the TOD Project Reporting Site</h1>
+            <p>The Office of Planning and Sustainable Development</p>
+            <p>Account Type: <%= accountType %>
+            </p>
+        </div>
+    </main>
+
 </body>
 
 </html>

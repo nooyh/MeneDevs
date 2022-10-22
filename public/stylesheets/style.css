@@ -1,3 +1,4 @@
+/*---Global Style---*/
 @font-face {
     font-family: "source-sans";
     src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
@@ -6,7 +7,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: #ffff;
+    /*background: #ffff;*/
+    background-image: url('/images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,47 +17,8 @@ body {
     text-align: center;
 }
 
-#siHeadDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#siInputDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#signup-container {
-    font-size: 15px;
-}
-
-input {
-    width: 15%;
-    padding: 12px 20px;
-    font-size: 18px;
-    margin: 2px;
-}
-
-input:focus {
-    outline: none;
-    border: 3px solid #555;
-}
-
-button {
-    font-size: 18px;
-    padding: 12px 30px;
-    background-color: rgb(25, 125, 255);
-    border-style: none;
-}
-
-button:hover {
-    background-color: rgb(20, 120, 255)
-}
-
 /*-----Navigation Bar Styling-----*/
-#navBar img {
+#nav-bar img {
     margin: none;
     padding-top: 10px;
 }
@@ -79,6 +42,7 @@ button:hover {
 }
 
 #account {
+    display:flex;
     margin-left: auto;
     padding-right: 20px;
 }

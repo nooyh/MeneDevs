@@ -1,0 +1,55 @@
+@font-face {
+    font-family:'source-sans';
+    src: url(../fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3aP6TkmDZz9g.ttf) format("truetype");
+}
+body {
+    font-family:'source-sans';
+    background-image: url("../images/hd-hawaiian-beach.jpg");
+    background-attachment: fixed;
+    color: #000;
+    display: flex;
+    justify-items: center;
+}
+
+/*(#rectangle {
+    display: flex;
+    justify-content: center;
+}*/
+#rectContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#rectangle{
+    width: 75%;
+    height:1080px;
+    background:white;
+    overflow-y: scroll;
+}
+
+#agencyFormPageHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#agencyFormQuestions{
+    text-align: center;
+}
+#contactInfo{
+    font-weight: bold;
+}
+#agencyFormSubmit{
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#agencyFormSubmit:hover{
+    background-color: rgb(27, 130, 219);
+}

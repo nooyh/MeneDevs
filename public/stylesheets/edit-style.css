@@ -1,0 +1,25 @@
+body {
+    margin-bottom: 50px;
+}
+
+input {
+    padding: 12px 20px;
+    width: 10%;
+    border-radius: 10px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+    transition-duration: 0.3s;
+    border: 3px solid #3296ff;
+    width: 25%;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #3296ff;
+    padding: 10px 15px;
+    margin: 5px;
+}

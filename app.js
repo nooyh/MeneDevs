@@ -1,4 +1,5 @@
-if (process.env.NODE_ENV != 'production') require('dotenv').config();
+if (process.env.NODE_ENV == 'development') require('dotenv').config();
+else require('./utils/no-idle')('mene-devs');
 
 const createError = require('http-errors');
 const express = require('express');
