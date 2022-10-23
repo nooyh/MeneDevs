@@ -22,7 +22,7 @@ module.exports = class PassportInit extends UserDB {
      * @param {String} email The user email
      * @param {String} pass The user password
      * @param {Function} done The passport done func
-     * @returns {undefined} Nothin
+     * @returns Empty promise
      */
     async _authenticate(email, pass, done) {
         const user = await this.findAccount(email, pass);
@@ -37,7 +37,7 @@ module.exports = class PassportInit extends UserDB {
      * @param {?String} user.email The user email
      * @param {?String} user.password The user password
      * @param {Function} done The passport done func
-     * @returns {undefined} Nothin
+     * @returns Nothin
      */
     _serialize(user, done) {
         return done(null, user);
@@ -49,7 +49,7 @@ module.exports = class PassportInit extends UserDB {
      * @param {?String} user.email The user email
      * @param {?String} user.password The user password
      * @param {Function} done The passport done func
-     * @returns {undefined} Nothin
+     * @returns Nothin
      */
     _deserialize(user, done) {
         return done(null, user);
