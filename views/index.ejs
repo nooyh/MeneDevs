@@ -14,19 +14,9 @@
     <section id="nav-bar">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
-            <div class="content">
-                <h3>Home</h3>
-            </div>
-
-            <div class="content">
-                <h3>Reports</h3>
-            </div>
-
-            <div id="account">
-                <img id="accountLogo" src="/images/account-logo.jpg" height="40px" style="padding-top: 20px" />
-            </div>
         </div>
     </section>
+
     <main>
         <div id="title-container">
             <h1 id="title">Welcome to the TOD Project Reporting Site</h1>
@@ -36,6 +26,10 @@
         </div>
     </main>
 
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
 </body>
 
 </html>

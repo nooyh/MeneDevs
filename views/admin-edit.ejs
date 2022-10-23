@@ -15,17 +15,6 @@
     <section id="nav-bar">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
-            <div class="content">
-                <h3>Home</h3>
-            </div>
-
-            <div class="content">
-                <h3>Reports</h3>
-            </div>
-
-            <div id="account">
-                <img id="accountLogo" src="/images/account-logo.jpg" height="40px" style="padding-top: 20px" />
-            </div>
         </div>
     </section>
 
@@ -42,7 +31,7 @@
             <h3 id="q3">3. Project Name</h3>
             <input type="text" placeholder="Enter the Project Name" autofocus />
             <h3 id="q4">4. Total Area of Project</h3>
-            <input type="numbers" placeholder="Enter the Area of Project" autofocus />
+            <input type="numbers" placeholder="Enter the Area of the Project" autofocus />
             <h3 id="q5">5. Name of Project Location</h3>
             <input type="text" placeholder="Enter the Project Location" autofocus />
             <h3 id="q6">6. Tax Map Key Numbers (If any)</h3>
@@ -68,7 +57,11 @@
         <!--  Background picture -->
     </main>
 
-    <script src="/javascripts/edit.js"></script>
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/admin.js"></script>
 </body>
 
 </html>
