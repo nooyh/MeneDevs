@@ -5,6 +5,13 @@
 body {
     font-family:'source-sans';
     background-image: url("../images/background.jpg");
+    font-family: 'source-sans';
+    src: url('/fonts/source-sans-pro-regular.ttf') format("truetype");
+}
+
+body {
+    font-family: 'source-sans';
+    background-image: url("/images/background.jpg");
     background-attachment: fixed;
     color: #000;
 }

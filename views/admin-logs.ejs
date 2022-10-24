@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/admin-logs-page.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Admin Page</title>
 </head>
 
@@ -39,6 +40,31 @@
                     </td>
                 </tr>
             </table>
+    <h1 id="logHeader">Submitted Forms</h1>
+    <p></p>
+    <table>
+        <!-- Ask how to make an if statement for adding rows and columns. -->
+        <tr>
+            <th>Agency Name</th>
+            <th>Project Name</th>
+            <th>Date Submitted</th>
+            <th>Review Status</th>
+        </tr>
+        <!--Example agency with filled out info-->
+        <tr>
+            <td>Department of Water</td>
+            <td>Kakaako Plumbing</td>
+            <td>10/18/22</td>
+            <td id="pendingReviewText" style="color: red">Needs Approval</td>
+            <td>
+                <button>Review</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/admin.js"></script>
 </body>

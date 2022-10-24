@@ -1,15 +1,17 @@
 @font-face {
-    font-family:'source-sans';
-    src: url(../fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3aP6TkmDZz9g.ttf) format("truetype");
+    font-family: 'source-sans';
+    src: url('/fonts/source-sans-pro-regular.ttf') format("truetype");
 }
+
 body {
-    font-family:'source-sans';
-    background-image: url("../images/hd-hawaiian-beach.jpg");
+    font-family: 'source-sans';
+    background-image: url("/images/hd-hawaiian-beach.jpg");
     background-attachment: fixed;
     color: #000;
     display: flex;
     justify-items: center;
 }
+
 #navbar {
     background-color: #333;
     position: fixed;
@@ -29,20 +31,23 @@ body {
     font-size: 17px;
 }
 
-#agencyFormPageHeader{
+#agencyFormPageHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-#agencyFormQuestions{
+
+#agencyFormQuestions {
     text-align: center;
 }
-#contactInfo{
+
+#contactInfo {
     font-weight: bold;
 }
-#agencyFormSubmit{
-    background-color: blue; 
+
+#submitReport {
+    background-color: blue;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -52,6 +57,6 @@ body {
     font-size: 16px;
 }
 
-#agencyFormSubmit:hover{
+#submitReport:hover {
     background-color: rgb(27, 130, 219);
 }
