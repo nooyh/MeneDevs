@@ -1,63 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/agency-form-page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
     <title>Document</title>
-</head>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function SubForm() {
+        $.ajax({
+          url: "https://api.apispreadsheets.com/data/UvaDp4lg5VLuRN06/",
+          type: "post",
+          data: $("#myForm").serializeArray(),
+          success: function () {
+            alert("Data successfully submitted.");
+          },
+          error: function () {
+            alert("Error submitting data.");
+          },
+        });
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
     <div id="rectContainer">
-        <div id="rectangle">
-            <h1 id="agencyFormPageHeader">Submit a Report</h1>
+      <div id="rectangle">
+        <h1 id="agencyFormPageHeader">Submit a Report</h1>
 
-            <div id="agencyFormQuestions">
-                <p>Please fill out the form with accurate information.</p>
-                <p id="redAstericks">* means required field</p>
-                <style>
-                    #redAstericks {
-                        color: red;
-                    }
-                </style>
-                <p>1. Name of Agency <span style="color:red">*</span></p>
-                <input type="text" placeholder="Name">
-                <p>2. Name of TOD Station Area <span style="color:red">*</span></p>
-                <input type="text" placeholder="Station Area Name">
-                <p>3. Project Name <span style="color:red">*</span></p>
-                <input type="text" placeholder="Project Name">
-                <p>4. Total Area of Project <span style="color:red">*</span></p>
-                <input type="number" placeholder="Number of Acres">
-                <p>5. Name of Project Location <span style="color:red">*</span></p>
-                <input type="text" placeholder="Location Name">
-                <p>6. (If any) Tax Map Key Numbers</p>
-                <input type="number" placeholder="Tax Map Key Numbers">
-                <p>7. Project Phase <span style="color:red">*</span></p>
-                <input type="radio" id="prePlanning" value="Pre-planning" name="phaseGroup">
-                <label for="prePlanning">Pre-planning <span style="color:red">*</span></label>
-                <input type="radio" id="planning" value="Planning" name="phaseGroup">
-                <label for="planning">Planning <span style="color:red">*</span></label>
-                <p>8. Project Status</p>
-                <input type="file" id="projectStatusFile" placeholder="Attach PDF Narrative">
-                <p>Phone Number <span style="color:red">*</span></p>
-                <input type="tel" placeholder="Phone Number">
-                <p>Email Address <span style="color:red">*</span></p>
-                <input type="text" placeholder="Email Address">
-                <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
-                <br>
-                <br>
-                <br>
-                <button id="agencyFormSubmit">Submit</button>
-            </div>
+        <div id="agencyFormQuestions">
+          <p>Please fill out the form with accurate information.</p>
+          <p id="redAstericks">* means required field</p>
+          <style>
+            #redAstericks {
+              color: red;
+            }
+          </style>
+          <p>1. Name of Agency <span style="color: red">*</span></p>
+          <input type="text" placeholder="Name" />
+          <p>2. Name of TOD Station Area <span style="color: red">*</span></p>
+          <input type="text" placeholder="Station Area Name" />
+          <p>3. Project Name <span style="color: red">*</span></p>
+          <input type="text" placeholder="Project Name" />
+          <p>4. Total Area of Project <span style="color: red">*</span></p>
+          <input type="number" placeholder="Number of Acres" />
+          <p>5. Name of Project Location <span style="color: red">*</span></p>
+          <input type="text" placeholder="Location Name" />
+          <p>6. (If any) Tax Map Key Numbers</p>
+          <input type="number" placeholder="Tax Map Key Numbers" />
+          <p>7. Project Phase <span style="color: red">*</span></p>
+          <input
+            type="radio"
+            id="prePlanning"
+            value="Pre-planning"
+            name="phaseGroup"
+          />
+          <label for="prePlanning"
+            >Pre-planning <span style="color: red">*</span></label
+          >
+          <input
+            type="radio"
+            id="planning"
+            value="Planning"
+            name="phaseGroup"
+          />
+          <label for="planning"
+            >Planning <span style="color: red">*</span></label
+          >
+          <p>8. Project Status</p>
+          <input
+            type="file"
+            id="projectStatusFile"
+            placeholder="Attach PDF Narrative"
+          />
+          <p>Phone Number <span style="color: red">*</span></p>
+          <input type="tel" placeholder="Phone Number" />
+          <p>Email Address <span style="color: red">*</span></p>
+          <input type="text" placeholder="Email Address" />
+          <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
+          <br />
+          <br />
+          <br />
+          <button id="agencyFormSubmit">Submit</button>
         </div>
+      </div>
     </div>
     <!-- 
     Contact information: Phone Number: [numbers only textbox. Try to make it auto put in dashes]
     Email Address: [textbox] 
     -->
-
-</body>
-
+  </body>
 </html>
