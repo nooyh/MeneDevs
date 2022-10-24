@@ -21,18 +21,18 @@ module.exports = class ReportsDB extends DB {
     }
 
     /**
-     * Gives you reports only for the agency you specified
-     * @param {String} agency (Case-sensitive) Whatever agency you want
-     * @returns Promised array of reports that only correspond with the given agency
+     * Gives you reports only for the email you specified
+     * @param {String} email Whatever email you want
+     * @returns Promised array of reports that only correspond with the given email
      */
-    async getReportsFor(agency) {
-        if (typeof agency != 'string') throw new Error('Expected agency to be a string');
+    async getReportsFor(email) {
+        if (typeof email != 'string') throw new Error('Expected email to be a string');
 
         const reports = await this.getAllReports();
         const sorted = [];
 
         for (const report of reports) {
-            if (report.agency == agency) {
+            if (report.email.toLowerCase() == email.toLowerCase()) {
                 sorted.push(report);
             }
         }
@@ -69,7 +69,7 @@ module.exports = class ReportsDB extends DB {
      * @param {String} info.location Name of project location
      * @param {?String} info.tmk (optional) Tax Map Key Numbers
      * @param {String} info.phase Project phase [Planning/Pre-planning]
-     * @param {String} info.status Project status
+     * @param {?String} info.status (optional) Project status
      * @param {String} info.date Date of report DD/MM/YYYY
      * @param {String} info.contact Contact information as phone number
      * @param {String} info.email Email address

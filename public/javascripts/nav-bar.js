@@ -34,3 +34,4 @@ accountImg.style.paddingTop = '20px';
 account.appendChild(accountImg);
 navBarDiv.appendChild(account);
 if (accountType == 'guest') linkTo(account, '/login');
+else linkTo(account, '/profile');

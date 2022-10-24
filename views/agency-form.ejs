@@ -6,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/agency-form-page.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
 
 <body>
+    <section id="nav-bar">
+        <div id="bar">
+            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+        </div>
+    </section>
+
     <div id="rectContainer">
         <div id="rectangle">
             <h1 id="agencyFormPageHeader">Submit a Report</h1>
@@ -23,33 +30,33 @@
                     }
                 </style>
                 <p>1. Name of Agency <span style="color:red">*</span></p>
-                <input type="text" placeholder="Name">
+                <input id="agency" type="text" placeholder="Name">
                 <p>2. Name of TOD Station Area <span style="color:red">*</span></p>
-                <input type="text" placeholder="Station Area Name">
+                <input id="stationArea" type="text" placeholder="Station Area Name">
                 <p>3. Project Name <span style="color:red">*</span></p>
-                <input type="text" placeholder="Project Name">
+                <input id="projectName" type="text" placeholder="Project Name">
                 <p>4. Total Area of Project <span style="color:red">*</span></p>
-                <input type="number" placeholder="Number of Acres">
+                <input id="totalArea" type="number" placeholder="Number of Acres">
                 <p>5. Name of Project Location <span style="color:red">*</span></p>
-                <input type="text" placeholder="Location Name">
+                <input id="location" type="text" placeholder="Location Name">
                 <p>6. (If any) Tax Map Key Numbers</p>
-                <input type="number" placeholder="Tax Map Key Numbers">
+                <input id="tmk" type="number" placeholder="Tax Map Key Numbers">
                 <p>7. Project Phase <span style="color:red">*</span></p>
-                <input type="radio" id="prePlanning" value="Pre-planning" name="phaseGroup">
+                <input id="prePlanning" type="radio" value="Pre-planning" name="phase">
                 <label for="prePlanning">Pre-planning <span style="color:red">*</span></label>
-                <input type="radio" id="planning" value="Planning" name="phaseGroup">
+                <input id="planning" type="radio" value="Planning" name="phase">
                 <label for="planning">Planning <span style="color:red">*</span></label>
                 <p>8. Project Status</p>
-                <input type="file" id="projectStatusFile" placeholder="Attach PDF Narrative">
+                <input id="status" type="file" placeholder="Attach PDF Narrative">
                 <p>Phone Number <span style="color:red">*</span></p>
-                <input type="tel" placeholder="Phone Number">
+                <input id="contact" type="tel" placeholder="Phone Number">
                 <p>Email Address <span style="color:red">*</span></p>
-                <input type="text" placeholder="Email Address">
+                <input id="email" type="text" placeholder="Email Address">
                 <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
                 <br>
                 <br>
                 <br>
-                <button id="agencyFormSubmit">Submit</button>
+                <button id="submitReport">Submit</button>
             </div>
         </div>
     </div>

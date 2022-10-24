@@ -42,7 +42,7 @@ body {
 }
 
 #account {
-    display:flex;
+    display: flex;
     margin-left: auto;
     padding-right: 20px;
 }
