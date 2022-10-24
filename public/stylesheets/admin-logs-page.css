@@ -9,10 +9,6 @@ body {
     background-attachment: fixed;
     color: #000;
 
-    font-family: 'source-sans';
-    background-image: url("../images/background.jpg");
-    background-attachment: fixed;
-    color: #000;
 }
 
 #navbar {
@@ -35,7 +31,6 @@ body {
 }
 
 
-#logHeader{
 #logHeader {
     display: flex;
     flex-direction: row;
