@@ -81,7 +81,22 @@
       </div>
     </form>
     <script>
+      // validate the form inputs; make sure they are filled
       var form = document.getElementById("sheetdb-form");
+      form.addEventListener("submit", (e) => {
+        const inputs = form.querySelectorAll("input");
+        let valid = true;
+        inputs.forEach((input) => {
+          if (!input.value) {
+            valid = false;
+          }
+        });
+        if (!valid) {
+          e.preventDefault();
+          alert("Please fill out all required fields");
+        }
+      });
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(form.action, {
