@@ -7,7 +7,6 @@ body {
     background-image: url("../images/background.jpg");
     background-attachment: fixed;
     color: #000;
-
 }
 
 #navbar {
@@ -27,27 +26,4 @@ body {
     padding: 15px;
     text-decoration: none;
     font-size: 17px;
-}
-
-
-#logHeader{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-table{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-}
-
-th{
-    text-align: left;
-}
-
-table, th, td {
-    border:1px solid #000;
 }
