@@ -14,19 +14,7 @@
     <!-----Navigation Bar----->
     <section id="nav-bar">
         <div id="bar">
-            <img id="logo" height="50px" src="/images/logo.jpg" />
-            <div class="content">
-                <h3>Home</h3>
-            </div>
-
-            <div class="content">
-                <h3>Reports</h3>
-            </div>
-
-            <div id="account">
-                <img id="account-logo" src="/images/account-logo.jpg" height="40px" style="padding-top: 20px" />
-                <h3>Guest</h3>
-            </div>
+            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
         </div>
     </section>
 
@@ -48,6 +36,11 @@
             <button type="submit">Login</button>
         </form>
     </main>
+
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
 </body>
 
 </html>

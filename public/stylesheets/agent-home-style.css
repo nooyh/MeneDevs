@@ -8,3 +8,21 @@ button {
     border-radius: 5px;
     background-color: #3296ff;
 }
+
+button:hover {
+    background-color: #267cd8;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+.project-picture {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+input:hover {
+    outline: 2px solid grey;
+}

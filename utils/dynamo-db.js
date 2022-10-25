@@ -18,7 +18,7 @@ module.exports = class DB {
     /**
      * Gives u everything inside whatever table ya want
      * @param {String} tableName The name of the table
-     * @returns {Promise} AWS promised object
+     * @returns AWS promised object
      */
     list(tableName) {
         if (typeof tableName != 'string') throw new Error('Expected tableName to be a string');
@@ -29,7 +29,7 @@ module.exports = class DB {
     /**
      * Converts the aws item list into a regular object
      * @param {Object} awsList The aws object response
-     * @returns {Object} The aws object with the newly converted item list
+     * @returns The aws object with the newly converted item list
      */
     async _parseList(awsList) {
         if (typeof awsList != 'object') throw new Error('Expected awsList to be an object');
@@ -47,7 +47,7 @@ module.exports = class DB {
      * @param {Object} info This holds the stuff ur looking for in the DB
      * @param {String} info.TableName This is the name of the table (case sensistive)
      * @param {Object} info.Key Looks for a match in this object
-     * @returns {Promise} AWS promised object
+     * @returns AWS promised object
      */
     find(info) {
         if (typeof info != 'object') throw new Error('Expected info to be an object');
@@ -62,6 +62,7 @@ module.exports = class DB {
      * @param {Object} info.Item This will hold ur actual data
      * @param {String} info.Item.PARTITION_KEY_HERE This should be the name of ur primary sorter
      * @param {String} info.Item.SORT_KEY_HERE This should be the name of ur range attribute
+     * @returns AWS promised object
      */
     put(info) {
         if (typeof info != 'object') throw new Error('Expected info to be an object');
@@ -74,6 +75,7 @@ module.exports = class DB {
      * @param {Object} info This holds the stuff ur removing from the DB
      * @param {String} info.TableName This is the name of the table (case sensistive)
      * @param {Object} info.Key This holds the actuall data u wanna look for and delete
+     * @returns AWS promised object
      */
     remove(info) {
         if (typeof info != 'object') throw new Error('Expected info to be an object');
@@ -89,7 +91,7 @@ module.exports = class DB {
      * @param {Object} info.TYPE_HERE The type should be Item = put methods, Key = get & delete methods
      * @param {String} info.TYPE_HERE.PARTITION_KEY_HERE This should be the name of ur primary sorter
      * @param {String} info.TYPE_HERE.SORT_KEY_HERE This should be the name of ur range attribute
-     * @returns {Promise} AWS promised object
+     * @returns AWS promised object
      */
     async _baseMethods(method, info) {
         if (typeof method != 'string') throw new Error('Expected method to be a string');
@@ -103,7 +105,7 @@ module.exports = class DB {
     /**
      * Converts the shitty AWS format to a regular one
      * @param {Object} item The item u want fixed
-     * @returns {Object} The new regular object
+     * @returns The new regular object
      */
     _parseItem(item) {
         if (typeof item != 'object') throw new Error('Expected item to be an object');

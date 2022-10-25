@@ -1,48 +1,54 @@
 @font-face {
-    font-family:'source-sans';
-    src: url(../fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3aP6TkmDZz9g.ttf) format("truetype");
+    font-family: "source-sans";
+    src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
 }
+
 body {
-    font-family:'source-sans';
-    background-image: url("../images/hd-hawaiian-beach.jpg");
+    font-family: "source-sans";
+    background-image: url("/images/background.jpg");
     background-attachment: fixed;
     color: #000;
-    display: flex;
-    justify-items: center;
 }
 
-/*(#rectangle {
-    display: flex;
-    justify-content: center;
-}*/
-#rectContainer{
+#navbar {
+    background-color: #333;
+    position: fixed;
+    top: -50px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: block;
+    transition: top 0.3s;
 }
 
-#rectangle{
-    width: 75%;
-    height:1080px;
-    background:white;
-    overflow-y: scroll;
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
-#logHeader{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-table{
+#logHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
-th{
+table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+th {
     text-align: left;
 }
 
-table, th, td {
-    border:1px solid #000;
+table,
+th,
+td {
+    border: 1px solid #000;
 }

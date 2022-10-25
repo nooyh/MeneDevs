@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Home</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/agent-home-style.css" />
+</head>
+
+<body>
+    <!-----Navigation Bar----->
+    <section id="nav-bar">
+        <div id="bar">
+            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+        </div>
+    </section>
+
+    <main>
+        <h1>Project List</h1>
+        <div class="project-picture">
+            <!--place holder pictures for now-->
+            <div>
+                <h2>Title of Project</h2>
+                <h3>Date Created:</h3>
+                <a href="">
+                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
+                </a>
+            </div>
+            <div>
+                <h2>Title of Project</h2>
+                <h3>Date Created:</h3>
+                <a href="">
+                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
+                </a>
+            </div>
+            <div>
+                <h2>Title of Project</h2>
+                <h3>Date created:</h3>
+                <a href="">
+                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
+                </a>
+            </div>
+        </div>
+
+        <button id="addReport">Add</button>
+        <br><br><br>
+    </main>
+
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/agency.js"></script>
+</body>
+
+</html>
