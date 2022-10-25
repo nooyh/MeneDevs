@@ -11,7 +11,7 @@ const checkAuthed = (req, res, next) => {
 
 /* GET home page. */
 router.get('/', checkAuthed, (req, res, next) => {
-    res.render('admin-home', { accountType: 'admin' });
+    res.redirect('/admin/logs');
 });
 
 /* GET edit global form page */

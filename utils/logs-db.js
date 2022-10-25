@@ -87,7 +87,7 @@ module.exports = class LogsDB extends DB {
     }
 
     /**
-     * Cuts the arrays a bunch of times then gives it to the merge function
+     * Cuts the arrays a bunch of times then gives it to the merge function (https://www.geeksforgeeks.org/merge-sort/)
      * @param {Array} arr The list of stuff u wanna sort
      * @param {Function} compare This is how u wanna compare the values to determine which is greater or less
      * @returns Gives you the sorted array
@@ -106,7 +106,7 @@ module.exports = class LogsDB extends DB {
     }
 
     /**
-     * Merges and sorts together the two split arrays
+     * Merges and sorts together the two split arrays (https://www.geeksforgeeks.org/merge-sort/)
      * @param {Array} left Left side of the split array
      * @param {Array} right Right side of the split array
      * @param {Function} compare This is how u wanna compare the values to determine which is greater or less

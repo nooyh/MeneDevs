@@ -13,14 +13,15 @@ const makeNavBarBtn = (name, link) => {
     navBarDiv.appendChild(div);
     linkTo(div, link);
 };
-makeNavBarBtn('Home', '/');
 
 // populate navbar for admin and agency accounts
 if (accountType == 'admin') {
     makeNavBarBtn('Logs', '/admin/logs');
     makeNavBarBtn('Edit Global Form', '/admin/edit');
 } else if (accountType == 'agency') {
-    makeNavBarBtn('Reports', '/agency/reports');
+    makeNavBarBtn('Home', '/agency');
+} else {
+    makeNavBarBtn('Home', '/');
 }
 
 // add profile btn

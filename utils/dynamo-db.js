@@ -1,6 +1,6 @@
 module.exports = class DB {
     /**
-     * Loads up DynamoDB
+     * Loads up DynamoDB (Used https://docs.aws.amazon.com/dynamodb/index.html)
      */
     constructor() {
         const AWS = require('aws-sdk');

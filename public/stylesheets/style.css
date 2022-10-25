@@ -51,3 +51,12 @@ body {
     position: relative;
     top: -5px;
 }
+
+.no-touch {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
