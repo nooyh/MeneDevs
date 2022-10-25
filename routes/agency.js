@@ -29,7 +29,7 @@ router.get('/reports', checkAuthed, async (req, res, next) => {
             }
         ],
     };
-    req.flash('reports', 'test');
+
     res.render('agency-reports', { accountType: 'agency', reports });
 });
 
