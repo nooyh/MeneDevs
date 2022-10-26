@@ -26,6 +26,12 @@ body {
 }
 
 /*-----Navigation Bar Styling-----*/
+#nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 #nav-bar img {
     margin: none;
     padding-top: 10px;
