@@ -76,6 +76,16 @@ body {
     font-weight: bold;
 }
 
+.table-content .th-sort-asc::after {
+    content: "\25b4";
+    margin-left: 5px;
+}
+
+.table-content .th-sort-desc::after {
+    content: "\25be";
+    margin-left: 5px;
+}
+
 .table-content th .table-content td {
     padding: 12px 15px;
 }

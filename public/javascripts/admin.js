@@ -1,6 +1,6 @@
 const editGlobalForm = document.getElementById('formsDir');
 const logs = document.getElementById('logsDir');
-const logHeader = document.getElementById('logHeader');
+const logHeader = document.getElementById('log-header');
 
 // Home Page Stuff
 if (editGlobalForm) {
@@ -10,8 +10,8 @@ if (editGlobalForm) {
 
 // Logs Page
 if (logHeader) {
-    document.querySelectorAll(".table-sort th").forEach(headerCell => {
-        headerCell.addEventListener("click", () => {
+    document.querySelectorAll(".table-content th").forEach(headerCell => {
+        headerCell.addEventListener("click", _ => {
             const tableElement = headerCell.parentElement.parentElement.parentElement;
             const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
             const currentIsAscending = headerCell.classList.contains("th-sort-asc");
