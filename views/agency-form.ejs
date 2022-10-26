@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/agency-form-page.css">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
     <title>Document</title>
 </head>
 
@@ -28,28 +28,32 @@
         </style>
         <p>1. Name of Agency <span style="color:red">*</span></p>
         <input id="agency" type="text" placeholder="Name">
-        <p>2. Name of TOD Station Area <span style="color:red">*</span></p>
-        <input id="stationArea" type="text" placeholder="Station Area Name">
-        <p>3. Project Name <span style="color:red">*</span></p>
-        <input id="projectName" type="text" placeholder="Project Name">
-        <p>4. Total Area of Project <span style="color:red">*</span></p>
-        <input id="totalArea" type="number" placeholder="Number of Acres">
-        <p>5. Name of Project Location <span style="color:red">*</span></p>
-        <input id="location" type="text" placeholder="Location Name">
-        <p>6. (If any) Tax Map Key Numbers</p>
-        <input id="tmk" type="number" placeholder="Tax Map Key Numbers">
-        <p>7. Project Phase <span style="color:red">*</span></p>
-        <input id="prePlanning" type="radio" value="Pre-planning" name="phase">
-        <label for="prePlanning">Pre-planning <span style="color:red">*</span></label>
-        <input id="planning" type="radio" value="Planning" name="phase">
-        <label for="planning">Planning <span style="color:red">*</span></label>
-        <p>8. Project Status</p>
-        <input id="status" type="file" placeholder="Attach PDF Narrative">
-        <p>Phone Number <span style="color:red">*</span></p>
+        <p>2. Phone Number <span style="color:red">*</span></p>
         <input id="contact" type="tel" placeholder="Phone Number">
-        <p>Email Address <span style="color:red">*</span></p>
+        <p>3. Email Address <span style="color:red">*</span></p>
         <input id="email" type="text" placeholder="Email Address">
-        <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
+        <p>4. Name of TOD Station Area <span style="color:red">*</span></p>
+        <input id="stationArea" type="text" placeholder="Station Area Name">
+        <p>5. Project Name <span style="color:red">*</span></p>
+        <input id="projectName" type="text" placeholder="Project Name">
+        <p>6. Total Area of Project <span style="color:red">*</span></p>
+        <input id="totalArea" type="number" placeholder="Number of Acres">
+        <p>7. Name of Project Location <span style="color:red">*</span></p>
+        <input id="location" type="text" placeholder="Location Name">
+        <p>8. (If any) Tax Map Key Numbers</p>
+        <input id="tmk" type="number" placeholder="Tax Map Key Numbers">
+        <p>9. Project Phase <span style="color:red">*</span></p>
+        <div id="radioBtn">
+            <input id="prePlanning" type="radio" value="Pre-planning" name="phase"> 
+            <label id="prePlanningBtn" for="prePlanning">Pre-planning</label>
+            <input id="planning" type="radio" value="Planning" name="phase">
+            <label id="planningBtn" for="planning">Planning </label>
+        </div>
+        <p>10. Current Project Budget</p>
+        <span class="input">$<input id="projectBudget" type="number" placeholder="Budget for current fiscal year"></span>  
+
+        <p>11. Project Status</p>
+        <textarea id="text" name="text" rows="2" cols="50" placeholder="Type project narrative here"></textarea>        
         <br>
         <br>
         <br>
