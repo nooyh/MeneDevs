@@ -11,7 +11,7 @@ const checkAuthed = (req, res, next) => {
 
 /* GET profile page. */
 router.get('/', checkAuthed, (req, res, next) => {
-    res.render('profile', { accountType: req.user.type });
+    res.render('profile', { accountType: req?.user?.type });
 });
 
 module.exports = router;

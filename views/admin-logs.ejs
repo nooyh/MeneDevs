@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <section id="nav-bar">
+    <section id="nav-bar" class="no-touch">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
         </div>
@@ -27,11 +27,11 @@
                 <table class="table table-sort">
                     <!-- Ask how to make an if statement for adding rows and columns. -->
                     <thead>
-                        <tr id="headerRow">
+                        <tr id="headerRow" class="no-touch">
                             <th>Agency Name</th>
                             <th>Project Name</th>
                             <th>Date Submitted</th>
-                            <th>Review Status</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <!--Example Agency 1-->
@@ -70,19 +70,6 @@
             </div>
         </div>
     </div>
-    <script id="tableSort">
-        /**
-         * Sorts a HTML table
-         * 
-         * @param {HTMLTableElement} table The table to sort
-         * @param {number} column The index of the column to sort
-         * @param {boolean} asc Whether or not to sort by ascending or descending
-         * 
-        */
-        function sortTableByColumn(table, column, asc = true) {
-            const dirModifier = asc ? 1 : -1;
-            const tBody = table.tBodies[0];
-            const rows = Array.from(tBody.querySelectorAll("tr"));
 
             // Sort each row
             const sortedRows = rows.sort((a, b) => {

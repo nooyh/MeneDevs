@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const LogsDB = require('../utils/logs-db');
+const db = new LogsDB();
 
 const checkAuthed = (req, res, next) => {
     // if (!req.isAuthenticated() || req?.user?.type != 'admin') {
@@ -11,7 +13,7 @@ const checkAuthed = (req, res, next) => {
 
 /* GET home page. */
 router.get('/', checkAuthed, (req, res, next) => {
-    res.render('admin-home', { accountType: 'admin' });
+    res.redirect('/admin/logs');
 });
 
 /* GET edit global form page */

@@ -29,20 +29,18 @@ body {
     text-decoration: none;
     font-size: 17px;
     border: 120px solid red;
-
-
 }
 
-#rectContainer{
+#rectContainer {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#rectangle{
+#rectangle {
     width: 75%;
-    height:1080px;
-    background:white;
+    height: 1080px;
+    background: white;
 }
 
 #logHeader {
@@ -51,37 +49,38 @@ body {
     justify-content: center;
 }
 
-#tableDiv{
+#tableDiv {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.table{
+.table {
     text-align: left;
-    border-collapse: collapse; 
+    border-collapse: collapse;
 }
-
 
 .table-sort th {
     cursor: pointer;
 }
+
 .table-sort .th-sort-asc::after {
-    content:"\25b4";
+    content: "\25b4";
 }
+
 .table-sort .th-sort-desc::after {
-    content:"\25be";
+    content: "\25be";
 }
+
 .table-sort .th-sort-asc::after,
-.table-sort .th-sort-desc::after{
+.table-sort .th-sort-desc::after {
     margin-left: 5px;
 }
+
 .table-sort .th-sort-asc,
 .table-sort .th-sort-desc {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
-
-
 
 th,
 td {
