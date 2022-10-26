@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,52 +9,95 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/agent-home-style.css" />
 </head>
-
+ 
 <body>
     <!-----Navigation Bar----->
-    <section id="nav-bar" class="no-touch">
+    <section id="nav-bar">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
         </div>
     </section>
-
+ 
     <main>
-        <h1>Project List</h1>
-        <div class="project-picture">
-            <!--place holder pictures for now-->
-            <div>
-                <h2>Title of Project</h2>
-                <h3>Date Created:</h3>
-                <a href="">
-                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
-                </a>
-            </div>
-            <div>
-                <h2>Title of Project</h2>
-                <h3>Date Created:</h3>
-                <a href="">
-                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
-                </a>
-            </div>
-            <div>
-                <h2>Title of Project</h2>
-                <h3>Date created:</h3>
-                <a href="">
-                    <input type="image" src="/images/form-place-holder.png" alt="Picture of project location" />
-                </a>
-            </div>
+        <h1>Agency Home Page</h1>
+        <div class="background">
+            <table class="table-content">
+                <!-- Ask how to make an if statement for adding rows and columns. -->
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Date Created</th>
+                        <th>Last Opened</th>
+                    </tr>
+                </thead>
+                <!--Example agency with filled out info-->
+                <tbody>
+                    <tr id="project1">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project2">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project3">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project4">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project5">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project6">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                    <tr id="project7">
+                        <td>Department of Water</td>
+                        <td>Kakaako Plumbing</td>
+                        <td>10/18/22</td>
+                        <td>
+                            <button>Open</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <button id="addReport">Add</button>
+        <button id="add-button">Add</button>
         <br><br><br>
     </main>
-
+ 
     <script>
         const accountType = '<%- accountType %>';
-        const allReports = JSON.parse('<%- JSON.stringify(allReports) %>');
     </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/agency.js"></script>
-</body>
 
-</html>
