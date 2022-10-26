@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,72 +9,64 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Admin Page</title>
 </head>
-
+ 
 <body>
     <section id="nav-bar" class="no-touch">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
         </div>
     </section>
-
-    <div id="rectContainer">
-        <div id="rectangle">
-            <!--<img src="/images/hd-hawaiian-beach.jpg" width="200px">-->
-            <h1 id="logHeader">Submitted Forms</h1>
-            <p></p>
-            <div id="tableDiv">
-                <table class="table table-sort">
-                    <!-- Ask how to make an if statement for adding rows and columns. -->
-                    <thead>
-                        <tr id="headerRow" class="no-touch">
-                            <th>Agency Name</th>
-                            <th>Project Name</th>
-                            <th>Date Submitted</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <!--Example Agency 1-->
-                    <tbody>
-                        <tr>
-                            <td>Department of Water</td>
-                            <td>Kakaako Plumbing</td>
-                            <td>10/18/22</td>
-                            <td id="pendingReviewText" style="color: red">Needs Approval</td>
-                            <td>
-                                <button>Review</button>
-                            </td>
-                        </tr>
-                        <!--Example Agency 2-->
-                        <tr>
-                            <td>Department of Electricity</td>
-                            <td>Power Lines</td>
-                            <td>10/24/22</td>
-                            <td id="pendingReviewText" style="color: red">Needs Approval</td>
-                            <td>
-                                <button>Review</button>
-                            </td>
-                        </tr>
-                        <!--Example Agency 3-->
-                        <tr>
-                            <td>Department of Transportation</td>
-                            <td>Freeway Lanes</td>
-                            <td>10/20/22</td>
-                            <td id="pendingReviewText" style="color: red">Needs Approval</td>
-                            <td>
-                                <button>Review</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+ 
+    <!--<img src="/images/hd-hawaiian-beach.jpg" width="200px">-->
+    <h1 id="log-header">Submitted Forms</h1>
+    <p></p>
+    <div class="background">
+        <table class="table-content">
+            <!-- Ask how to make an if statement for adding rows and columns. -->
+            <thead>
+                <tr>
+                    <th>Agency Name</th>
+                    <th>Project Name</th>
+                    <th>Date Submitted</th>
+                    <th>Review Status</th>
+                </tr>
+            </thead>
+            <!--Example agency with filled out info-->
+            <tr>
+                <td>Department of Water</td>
+                <td>Kakaako Plumbing</td>
+                <td>10/18/22</td>
+                <td id="pendingReviewText" style="color: red">Needs Approval</td>
+                <td>
+                    <button>Review</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Department of Earth</td>
+                <td>Kakaako Plumbing</td>
+                <td>10/18/22</td>
+                <td id="pendingReviewText" style="color: green">Approved</td>
+                <td>
+                    <button>Review</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Department of Water</td>
+                <td>Kakaako Plumbing</td>
+                <td>10/18/22</td>
+                <td id="pendingReviewText" style="color: red">Needs Approval</td>
+                <td>
+                    <button>Review</button>
+                </td>
+            </tr>
+        </table>
     </div>
-
+ 
     <script>
         const accountType = '<%- accountType %>';
     </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/admin.js"></script>
 </body>
-
+ 
 </html>

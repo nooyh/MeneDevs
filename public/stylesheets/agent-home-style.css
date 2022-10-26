@@ -1,28 +1,56 @@
-.project-picture {
-    margin: 5%;
-}
-
 button {
-    padding: 12px 50px;
-    border: none;
     border-radius: 5px;
-    background-color: #3296ff;
 }
-
+ 
+#add-button{
+    height: 40px;
+    width: 100px;
+}
+ 
 button:hover {
-    background-color: #267cd8;
+    background-color: rgb(212, 207, 207);
 }
-
+ 
 h1 {
-    font-size: 75px;
+    font-size: 50px;
+}
+ 
+.background {
+    display:flex;
+    justify-content: center;
+}
+.table-content {
+    border-collapse: collapse;
+    background-color: white;
+    margin: 25px 0;
+    font-size: 1.2em;
+    min-width: 700px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px black;
+}
+ 
+.table-content thead tr {
+    background-color: #37465F;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.table-content th
+.table-content td {
+    padding: 12px 15px;
+}
+ 
+.table-content tbody tr {
+    border-bottom: 1px solid grey;
+}
+ 
+.table-content tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+ 
+.table-content tbody tr:last-of-type{
+    border-bottom: 5px solid #37465F;
 }
 
-.project-picture {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-input:hover {
-    outline: 2px solid grey;
-}
