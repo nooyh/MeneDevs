@@ -27,28 +27,62 @@ body {
     padding: 15px;
     text-decoration: none;
     font-size: 17px;
+    border: 120px solid red;
+}
+
+#rectContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#rectangle {
+    width: 75%;
+    height: 1080px;
+    background: white;
 }
 
 #logHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
-table {
+#tableDiv {
+    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
-th {
+.table {
     text-align: left;
+    border-collapse: collapse;
 }
 
-table,
+.table-sort th {
+    cursor: pointer;
+}
+
+.table-sort .th-sort-asc::after {
+    content: "\25b4";
+}
+
+.table-sort .th-sort-desc::after {
+    content: "\25be";
+}
+
+.table-sort .th-sort-asc::after,
+.table-sort .th-sort-desc::after {
+    margin-left: 5px;
+}
+
+.table-sort .th-sort-asc,
+.table-sort .th-sort-desc {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 th,
 td {
     border: 1px solid #000;
+    border-collapse: collapse;
 }
