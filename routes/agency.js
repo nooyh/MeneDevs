@@ -13,19 +13,7 @@ const checkAuthed = (req, res, next) => {
 
 /* GET reports page. */
 router.get('/', checkAuthed, async (req, res, next) => {
-    // const allReports = await db.getReportsFor(req.user.email);
-    const allReports = [
-        {
-            agency: "test",
-            id: "1666685257541",
-            contact: "1231231233",
-            email: "agency@gmail.com",
-            location: "test",
-            phase: "Pre-planning",
-            projectName: "test",
-            stationArea: "test",
-        },
-    ];
+    const allReports = await db.getReportsFor(req?.user?.email || '');
 
     res.render('agency-reports', { accountType: 'agency', allReports });
 });
@@ -39,7 +27,7 @@ router.get('/new', checkAuthed, (req, res, next) => {
 router.post('/new', checkAuthed, async (req, res, next) => {
     if (!req.body.agency) return res.status(502).json("missing 'agency' from body");
 
-    // await db.createReport(req.body.agency, req.body);
+    await db.createReport(req.body.agency, req.body);
     res.json('success');
 });
 

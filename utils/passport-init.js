@@ -4,6 +4,7 @@ const UserDB = require('./user-db');
 module.exports = class PassportInit extends UserDB {
     /**
      * Initializes the passport and tells it what strategy we're using and everything else like that
+     * 
      * @param {import('passport')} passport Just import the passport module pls
      */
     constructor(passport) {
@@ -19,6 +20,7 @@ module.exports = class PassportInit extends UserDB {
 
     /**
      * This will make sure the person has a registered account in the dynamoDB
+     * 
      * @param {String} email The user email
      * @param {String} pass The user password
      * @param {Function} done The passport done func
@@ -33,6 +35,7 @@ module.exports = class PassportInit extends UserDB {
 
     /**
      * Saves the person into a session
+     * 
      * @param {Object} user Object that contains user login credentials
      * @param {?String} user.email The user email
      * @param {?String} user.password The user password
@@ -45,6 +48,7 @@ module.exports = class PassportInit extends UserDB {
 
     /**
      * Unsaves the person from a session
+     * 
      * @param {Object} user Object that contains user login credentials
      * @param {?String} user.email The user email
      * @param {?String} user.password The user password

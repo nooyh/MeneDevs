@@ -1,4 +1,5 @@
 const DB = require('./dynamo-db');
+const emitter = require('./emitter');
 
 module.exports = class LogsDB extends DB {
     /**
@@ -17,10 +18,19 @@ module.exports = class LogsDB extends DB {
             Name: 'name',
             Date: 'timestamp',
         };
+
+        this._listenToReportEvents();
+    }
+
+    _listenToReportEvents() {
+        emitter.on('reportAdd', (report) => this._addLog('add', report));
+        emitter.on('reportUpdate', (report) => this._addLog('edit', report));
+        emitter.on('reportDelete', (report) => this._addLog('delete', report));
     }
 
     /**
      * Makes a new log from scratch
+     * 
      * @param {String} category The category of log (add, edit, delete)
      * @param {Object} report The report object from report-db
      * @param {String} report.stationArea Name of TOD station area
@@ -35,7 +45,7 @@ module.exports = class LogsDB extends DB {
      * @param {String} report.email Email address
      * @returns Empty promise
      */
-    async addLog(category, report) {
+    async _addLog(category, report) {
         if (!['add', 'edit', 'delete'].includes(category)) throw new Error("Expected category to be 'add', 'edit', or 'delete'");
         if (typeof report != 'object') throw new Error('Expected report to be an object');
         if (!this.logs) await this._loadSavedLogs();
@@ -88,6 +98,7 @@ module.exports = class LogsDB extends DB {
 
     /**
      * Cuts the arrays a bunch of times then gives it to the merge function (https://www.geeksforgeeks.org/merge-sort/)
+     * 
      * @param {Array} arr The list of stuff u wanna sort
      * @param {Function} compare This is how u wanna compare the values to determine which is greater or less
      * @returns Gives you the sorted array
@@ -107,6 +118,7 @@ module.exports = class LogsDB extends DB {
 
     /**
      * Merges and sorts together the two split arrays (https://www.geeksforgeeks.org/merge-sort/)
+     * 
      * @param {Array} left Left side of the split array
      * @param {Array} right Right side of the split array
      * @param {Function} compare This is how u wanna compare the values to determine which is greater or less

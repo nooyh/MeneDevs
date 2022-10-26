@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const LogsDB = require('../utils/logs-db');
+const db = new LogsDB();
 
 const checkAuthed = (req, res, next) => {
     // if (!req.isAuthenticated() || req?.user?.type != 'admin') {
