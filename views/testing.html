@@ -1,208 +1,151 @@
-<?php
-$action = $_GET["action"];
-$myText = $_POST["mytext"];
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
+    <title>Document</title>
+  </head>
 
-if($action = "save") {
-  $targetFolder = "/path/to/folder";
-  file_put_contents($targetFolder."mytext.txt", $myText);
-}
-?>
-<html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
-      <title>Document</title>
-    </head>
+  <body>
+    <form
+      action="https://sheetdb.io/api/v1/spafdm1xlwnda"
+      method="POST"
+      id="sheetdb-form"
+    >
+      <div id="rectContainer">
+        <div id="rectangle">
+          <h1 id="agencyFormPageHeader">Submit a Report</h1>
 
-    <body>
-      <p id="demo">testing</p>
-      <form id="form">
-        <div id="rectContainer">
-          <div id="rectangle">
-            <h1 id="agencyFormPageHeader">Submit a Report</h1>
+          <div id="agencyFormQuestions">
+            <p>Please fill out the form with accurate information.</p>
+            <p id="redAstericks">* means required field</p>
+            <style>
+              #redAstericks {
+                color: red;
+              }
+            </style>
+            <p>1. Name of Agency <span style="color: red">*</span></p>
+            <input type="text" placeholder="Name" name="data[Name]" />
+            <p>2. Name of TOD Station Area <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Station Area Name"
+              name="data[Station Area Name]"
+            />
+            <p>3. Project Name <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Project Name"
+              name="data[Project Name]"
+            />
 
-            <div id="agencyFormQuestions">
-              <p>Please fill out the form with accurate information.</p>
-              <p id="redAstericks">* means required field</p>
-              <style>
-                #redAstericks {
-                  color: red;
-                }
-              </style>
-              <p>1. Name of Agency <span style="color: red">*</span></p>
-              <input
-                type="text"
-                id="Name"
-                placeholder="Name"
-                name="data[Name]"
-              />
-              <p>
-                2. Name of TOD Station Area <span style="color: red">*</span>
-              </p>
-              <input
-                type="text"
-                placeholder="Station Area Name"
-                id="Station Area Name"
-                name="data[Station Area Name]"
-              />
-              <p>3. Project Name <span style="color: red">*</span></p>
-              <input type="text" id="Project Name" placeholder="Project Name" />
-              <p>4. Total Area of Project <span style="color: red">*</span></p>
-              <input
-                type="number"
-                id="Number of Acres"
-                placeholder="Number of Acres"
-              />
-              <p>
-                5. Name of Project Location <span style="color: red">*</span>
-              </p>
-              <input
-                type="text"
-                placeholder="Location Name"
-                id="Location Name"
-              />
-              <p>6. (If any) Tax Map Key Numbers</p>
-              <input
-                type="number"
-                id="Tax Map Key Numbers"
-                placeholder="Tax Map Key Numbers"
-              />
-              <p>7. Project Phase <span style="color: red">*</span></p>
-              <input type="radio" value="Pre-planning" name="phaseGroup" />
-              <label for="prePlanning"
-                >Pre-planning <span style="color: red">*</span></label
-              >
-              <input type="radio" value="Planning" name="phaseGroup" />
-              <label for="planning"
-                >Planning <span style="color: red">*</span></label
-              >
-              <p>8. Project Status</p>
-              <input
-                type="file"
-                id="Project Status"
-                placeholder="Attach PDF Narrative"
-              />
-              <p>Phone Number <span style="color: red">*</span></p>
-              <input type="tel" id="Phone Number" placeholder="Phone Number" />
-              <p>Email Address <span style="color: red">*</span></p>
-              <input
-                type="text"
-                id="Email Address"
-                placeholder="Email Address"
-              />
-              <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
-              <br />
-              <br />
-              <br />
-              <!-- <button id="agencyFormSubmit">Submit</button> -->
-              <input
-                type="button"
-                id="bt"
-                value="Submit"
-                onclick="saveFile()"
-              />
-            </div>
+            <p>4. Total Area of Project <span style="color: red">*</span></p>
+            <input
+              type="number"
+              placeholder="Number of Acres"
+              name="data[Number of Acres]"
+            />
+
+            <p>5. Name of Project Location <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Location Name"
+              name="data[Location Name]"
+            />
+            <p>6. (If any) Tax Map Key Numbers</p>
+            <input
+              type="number"
+              placeholder="Tax Map Key Numbers"
+              name="data[Tax Map Key Numbers]"
+            />
+
+            <p>7. Project Phase <span style="color: red">*</span></p>
+            <input
+              type="radio"
+              id="prePlanning"
+              value="Pre-planning"
+              name="phaseGroup"
+            />
+            <select name="data[Project Phase]">
+              <option value="Pre-Planning">Pre-Planning</option>
+              <option value="Planning">Planning</option>
+            </select>
+
+            <p id="project-status-label">8. Project Status (PDF upload)</p>
+            <input
+              id="Project Status"
+              placeholder="Project Status"
+              value="Project Status"
+              name="data[Project Status]"
+              type="file"
+              accept="application/pdf"
+            />
+
+            <p>Phone Number <span style="color: red">*</span></p>
+            <input
+              type="number"
+              placeholder="Phone Number"
+              name="data[Phone Number]"
+            />
+            <p>Email Address <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Email Address"
+              name="data[Email Address]"
+            />
+            <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
+            <br />
+            <br />
+            <br />
+            <button id="agencyFormSubmit">Submit</button>
           </div>
         </div>
-      </form>
-      <!-- 
+      </div>
+    </form>
+    <script>
+      // validate the form inputs; make sure they are filled
+      var form = document.getElementById("sheetdb-form");
+      form.addEventListener("submit", (e) => {
+        const inputs = form.querySelectorAll("input");
+        let valid = true;
+        inputs.forEach((input) => {
+          if (!input.value) {
+            valid = false;
+          }
+        });
+        if (!valid) {
+          e.preventDefault();
+          alert("Please fill out all required fields");
+        }
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+        })
+          .then((response) => response.json())
+          .then((html) => {
+            // you can put any JS code here
+            alert("Successfully submitted.");
+          });
+      });
+
+      document
+        .getElementById("Project Status")
+        .addEventListener("change", function () {
+          if (this.files[0].size > 1000000) {
+            alert("File is too big!");
+            this.value = "";
+          }
+        });
+    </script>
+    <!-- 
     Contact information: Phone Number: [numbers only textbox. Try to make it auto put in dashes]
     Email Address: [textbox] 
-    --></body>
-    <script>
-      let saveFile = () => {
-        // Get the data from each element on the form.
-        // create array of headers
-        let headers = [
-          "Name of Agency",
-          "Station Area Name",
-          "Project Name",
-          "Total Area of Project",
-          "Name of Project Location",
-          "Tax Map Key Numbers",
-          "Project Phase",
-          "Project Status",
-          "Phone Number",
-          "Email Address",
-        ];
-        const name = document.getElementById("Name");
-        const stationAreaName = document.getElementById("Station Area Name");
-        const projectName = document.getElementById("Project Name");
-        const numberOfAcres = document.getElementById("Number of Acres");
-        const locationName = document.getElementById("Location Name");
-        const taxMapKeyNumbers = document.getElementById("Tax Map Key Numbers");
-        const projectPhase = "";
-        const projectStatus = document.getElementById("Project Status");
-        const phoneNumber = document.getElementById("Phone Number");
-        const emailAddress = document.getElementById("Email Address");
-
-        // This variable stores all the data.
-        let data = "";
-        // Add the headers to the data string.
-        for (let i = 0; i < headers.length; i++) {
-          data += headers[i] + ",";
-        }
-
-        var radios = document.getElementsByName("phaseGroup");
-        // show on the html doc what radio[0] is
-        // add a element to the document
-
-        document.getElementById("demo").innerHTML = radios[0].value;
-        // check if the project phase has selected "pre planning" or "planning"
-        // for (var i = 0, length = radios.length; i < length; i++) {
-        //   if (radios[i] == "Pre-planning") {
-        //     projectPhase = "Pre-planning";
-        //   } else if (radios[i] == "Planning") {
-        //     projectPhase = "Planning";
-        //   }
-        // }
-
-        // get the
-        // for each new user data, append it to a new row of the csv data
-        data += "\n";
-        data +=
-          name.value +
-          "," +
-          stationAreaName.value +
-          "," +
-          projectName.value +
-          "," +
-          numberOfAcres.value +
-          "," +
-          locationName.value +
-          "," +
-          taxMapKeyNumbers.value +
-          "," +
-          projectPhase.value +
-          "," +
-          projectStatus.value +
-          "," +
-          phoneNumber.value +
-          "," +
-          emailAddress.value +
-          ",";
-
-        // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: "text/plain" });
-        const sFileName = "formData.csv"; // The file to save the data.
-
-        let newLink = document.createElement("a");
-        newLink.download = sFileName;
-
-        // if the csv already exists, append the new data to a new row, otherwise create a new file
-        if (window.webkitURL != null) {
-          newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        } else {
-          newLink.href = window.URL.createObjectURL(textToBLOB);
-          newLink.style.display = "none";
-          document.body.appendChild(newLink);
-        }
-
-        newLink.click();
-      };
-    </script>
-  </html>
+    -->
+  </body>
 </html>
