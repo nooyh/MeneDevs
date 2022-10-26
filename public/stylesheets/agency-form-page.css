@@ -1,6 +1,7 @@
 body {
     margin-bottom: 50px;
 }
+
 #navbar {
     background-color: #333;
     position: fixed;
@@ -26,8 +27,9 @@ body {
 
 #prePlanningBtn,
 #planningBtn {
-    font-weight:normal;
+    font-weight: normal;
 }
+
 #radioBtn {
     display: flex;
     flex-direction: column;

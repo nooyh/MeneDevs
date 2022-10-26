@@ -2,11 +2,11 @@
     font-family: "source-sans";
     src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
 }
- 
-#log-header{
+
+#log-header {
     font-size: 50px;
 }
- 
+
 body {
     font-family: "source-sans";
     background-image: url("/images/background.jpg");
@@ -14,7 +14,7 @@ body {
     color: #000;
 
 }
- 
+
 #navbar {
     background-color: #333;
     position: fixed;
@@ -23,7 +23,7 @@ body {
     display: block;
     transition: top 0.3s;
 }
- 
+
 #navbar a {
     float: left;
     display: block;
@@ -34,29 +34,30 @@ body {
     font-size: 17px;
     border: 120px solid red;
 }
- 
+
 #rectContainer {
     width: 100%;
     display: flex;
     justify-content: center;
 }
- 
+
 #rectangle {
     width: 75%;
     height: 1080px;
     background: white;
 }
- 
+
 #logHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
- 
+
 .background {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
+
 .table-content {
     border-collapse: collapse;
     background-color: white;
@@ -67,28 +68,27 @@ body {
     overflow: hidden;
     box-shadow: 0 0 20px black;
 }
- 
+
 .table-content thead tr {
     background-color: #37465F;
     color: white;
     text-align: center;
     font-weight: bold;
 }
- 
-.table-content th
-.table-content td {
+
+.table-content th .table-content td {
     padding: 12px 15px;
 }
- 
+
 .table-content tbody tr {
     border-bottom: 1px solid grey;
 }
- 
+
 .table-content tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
- 
-.table-content tbody tr:last-of-type{
+
+.table-content tbody tr:last-of-type {
     border-bottom: 5px solid #37465F;
 }
 

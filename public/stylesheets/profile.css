@@ -1,6 +1,6 @@
 @font-face {
-    font-family:'source-sans';
-    src: url(../fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3aP6TkmDZz9g.ttf) format("truetype");
+    font-family: 'source-sans';
+    src: url('/fonts/source-sans-pro-regular.ttf') format("truetype");
 }
 
 body {
