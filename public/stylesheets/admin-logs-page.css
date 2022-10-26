@@ -12,6 +12,7 @@ body {
     background-image: url("/images/background.jpg");
     background-attachment: fixed;
     color: #000;
+
 }
  
 #navbar {
@@ -91,3 +92,9 @@ body {
     border-bottom: 5px solid #37465F;
 }
 
+th,
+td {
+
+    border: 1px solid #000;
+    border-collapse: collapse;
+}

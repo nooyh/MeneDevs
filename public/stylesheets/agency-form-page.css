@@ -1,14 +1,6 @@
-@font-face {
-    font-family: 'source-sans';
-    src: url('/fonts/source-sans-pro-regular.ttf') format("truetype");
-}
-
 body {
-    font-family: 'source-sans';
-    background-attachment: fixed;
-    color: #000;
+    margin-bottom: 50px;
 }
-
 #navbar {
     background-color: #333;
     position: fixed;
@@ -29,27 +21,53 @@ body {
 }
 
 #agencyFormQuestions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#contactInfo {
     font-weight: bold;
 }
 
-#submitReport {
-    background-color: blue;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+#prePlanningBtn,
+#planningBtn {
+    font-weight:normal;
+}
+#radioBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#submitReport:hover {
-    background-color: rgb(27, 130, 219);
+
+#projectBudget {
+    padding: 12px 20px;
+    width: 10%;
+    border-radius: 10px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+input,
+#projectBudget,
+#status {
+    padding: 12px 20px;
+    width: 10%;
+    border-radius: 10px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+    /*May seem redundant to add this, but for some reason, font in placeholder #status changes back to default times new roman. It is what it is*/
+    font-family: "source-sans";
+    src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
+}
+
+input:focus,
+#projectBudget:focus,
+#status:focus {
+    transition-duration: 0.3s;
+    border: 3px solid #3296ff;
+    width: 25%;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #3296ff;
+    padding: 10px 15px;
+    margin: 5px;
 }
