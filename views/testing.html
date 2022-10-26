@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form
+      action="https://sheetdb.io/api/v1/spafdm1xlwnda"
+      method="POST"
+      id="sheetdb-form"
+    >
+      <div id="rectContainer">
+        <div id="rectangle">
+          <h1 id="agencyFormPageHeader">Submit a Report</h1>
+
+          <div id="agencyFormQuestions">
+            <p>Please fill out the form with accurate information.</p>
+            <p id="redAstericks">* means required field</p>
+            <style>
+              #redAstericks {
+                color: red;
+              }
+            </style>
+            <p>1. Name of Agency <span style="color: red">*</span></p>
+            <input type="text" placeholder="Name" name="data[Name]" />
+            <p>2. Name of TOD Station Area <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Station Area Name"
+              name="data[Station Area Name]"
+            />
+            <p>3. Project Name <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Project Name"
+              name="data[Project Name]"
+            />
+
+            <p>4. Total Area of Project <span style="color: red">*</span></p>
+            <input
+              type="number"
+              placeholder="Number of Acres"
+              name="data[Number of Acres]"
+            />
+
+            <p>5. Name of Project Location <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Location Name"
+              name="data[Location Name]"
+            />
+            <p>6. (If any) Tax Map Key Numbers</p>
+            <input
+              type="number"
+              placeholder="Tax Map Key Numbers"
+              name="data[Tax Map Key Numbers]"
+            />
+
+            <p>7. Project Phase <span style="color: red">*</span></p>
+            <input
+              type="radio"
+              id="prePlanning"
+              value="Pre-planning"
+              name="phaseGroup"
+            />
+            <select name="data[Project Phase]">
+              <option value="Pre-Planning">Pre-Planning</option>
+              <option value="Planning">Planning</option>
+            </select>
+
+            <p id="project-status-label">8. Project Status (PDF upload)</p>
+            <input
+              id="Project Status"
+              placeholder="Project Status"
+              value="Project Status"
+              name="data[Project Status]"
+              type="file"
+              accept="application/pdf"
+            />
+
+            <p>Phone Number <span style="color: red">*</span></p>
+            <input
+              type="number"
+              placeholder="Phone Number"
+              name="data[Phone Number]"
+            />
+            <p>Email Address <span style="color: red">*</span></p>
+            <input
+              type="text"
+              placeholder="Email Address"
+              name="data[Email Address]"
+            />
+            <!--SUBMIT BUTTON (The three BRs seem inefficent someone please find a way to make it better fr)-->
+            <br />
+            <br />
+            <br />
+            <button id="agencyFormSubmit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script>
+      // validate the form inputs; make sure they are filled
+      var form = document.getElementById("sheetdb-form");
+      form.addEventListener("submit", (e) => {
+        const inputs = form.querySelectorAll("input");
+        let valid = true;
+        inputs.forEach((input) => {
+          if (!input.value) {
+            valid = false;
+          }
+        });
+        if (!valid) {
+          e.preventDefault();
+          alert("Please fill out all required fields");
+        }
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+        })
+          .then((response) => response.json())
+          .then((html) => {
+            // you can put any JS code here
+            alert("Successfully submitted.");
+          });
+      });
+
+      document
+        .getElementById("Project Status")
+        .addEventListener("change", function () {
+          if (this.files[0].size > 1000000) {
+            alert("File is too big!");
+            this.value = "";
+          }
+        });
+    </script>
+    <!-- 
+    Contact information: Phone Number: [numbers only textbox. Try to make it auto put in dashes]
+    Email Address: [textbox] 
+    -->
+  </body>
+</html>
