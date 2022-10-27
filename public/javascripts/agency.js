@@ -109,3 +109,10 @@ if (submitReport) {
         }
     });
 }
+
+window.addEventListener('click', (event) => {
+    for (const btn of document.getElementsByClassName('dropbtn')) {
+        const dropdown = btn.parentElement.children[1];
+        dropdown.classList[event.target.value == btn.value ? 'toggle' : 'remove']('show');
+    }
+});
