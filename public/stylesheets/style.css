@@ -40,7 +40,7 @@ body {
 #bar {
     display: flex;
     gap: 25px;
-    background-color: rgb(50, 150, 255);
+    background-color: #278AEE;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -83,4 +83,11 @@ body {
     position: relative;
     top: -5px;
     cursor: pointer;
+}
+
+#divider {
+    position: relative;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: -20px;
 }
