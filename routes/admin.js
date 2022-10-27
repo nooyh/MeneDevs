@@ -18,12 +18,12 @@ router.get('/', checkAuthed, (req, res, next) => {
 
 /* GET edit global form page */
 router.get('/edit', checkAuthed, (req, res, next) => {
-    res.render('admin-edit', { accountType: 'admin' });
+    res.render('admin/edit-global-form', { accountType: 'admin' });
 });
 
 /* GET logs page. */
 router.get('/logs', checkAuthed, (req, res, next) => {
-    res.render('admin-logs', { accountType: 'admin' });
+    res.render('admin/logs', { accountType: 'admin' });
 });
 
 module.exports = router;

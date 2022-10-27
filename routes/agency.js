@@ -11,16 +11,24 @@ const checkAuthed = (req, res, next) => {
     next();
 };
 
-/* GET reports page. */
+/* GET all reports page. */
 router.get('/', checkAuthed, async (req, res, next) => {
     const allReports = await db.getReportsFor(req?.user?.email || '');
 
-    res.render('agency-reports', { accountType: 'agency', allReports });
+    res.render('agency/view-reports', { accountType: 'agency', allReports });
 });
 
-/* GET create report page. */
-router.get('/new', checkAuthed, (req, res, next) => {
-    res.render('agency-form', { accountType: 'agency' });
+/* GET specific report page */
+router.get('/:reportId', checkAuthed, (req, res, next) => {
+    const reportId = req.params.reportId;
+
+    if (reportId == 'new') {
+        return res.render('agency/report', { accountType: 'agency' });
+    }
+
+    // i'll add functionality later - alohabeach
+
+    res.render('agency/report', { accountType: 'agency' });
 });
 
 /* POST create report */

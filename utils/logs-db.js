@@ -39,10 +39,11 @@ module.exports = class LogsDB extends DB {
      * @param {String} report.location Name of project location
      * @param {?String} report.tmk (optional) Tax Map Key Numbers
      * @param {String} report.phase Project phase [Planning/Pre-planning]
-     * @param {String} report.status Project status
+     * @param {?String} report.status (optional) Project status
      * @param {String} report.date Date of report DD/MM/YYYY
      * @param {String} report.contact Contact information as phone number
      * @param {String} report.email Email address
+     * @param {?String} report.budget (optional) The budget amount
      * @returns Empty promise
      */
     async _addLog(category, report) {

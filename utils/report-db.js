@@ -78,6 +78,7 @@ module.exports = class ReportsDB extends DB {
      * @param {String} info.date Date of report DD/MM/YYYY
      * @param {String} info.contact Contact information as phone number
      * @param {String} info.email Email address
+     * @param {?String} info.budget (optional) The budget amount
      * @returns Empty promise
      */
     async createReport(agency, info) {
@@ -154,6 +155,7 @@ module.exports = class ReportsDB extends DB {
      * @param {String} info.date Date of report DD/MM/YYYY
      * @param {String} info.contact Contact information as phone number
      * @param {String} info.email Email address
+     * @param {?String} info.budget (optional) The budget amount
      * @returns Empty promise
      */
     async deleteReport(agency, info) {

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/agency-form-page.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/agency/report.css" />
     <title>Document</title>
 </head>
 
@@ -41,7 +41,7 @@
         <p>8. (If any) Tax Map Key Numbers</p>
         <input id="tmk" type="number" placeholder="Tax Map Key Numbers">
         <p>9. Project Phase <span style="color:red">*</span></p>
-        <select id="phaseDropDown" name="projectPhase" placeholder="Select One">
+        <select id="phase" name="projectPhase" placeholder="Select One">
             <option id="ddPlaceHolder" disabled selected>Select One</option>
             <option value="prePlanning">Pre-Planning</option>
             <option value="planning">Planning</option>
@@ -50,7 +50,7 @@
             <option value="completed">Completed</option>
         </select>
         <p>10. Current Project Budget</p>
-        <span class="input">$<input id="projectBudget" type="number" placeholder="Budget for current fiscal year"></span>
+        <input id="budget" type="text" placeholder="Budget for current fiscal year">
         <p>11. Project Status</p>
         <textarea id="status" name="text" rows="2" cols="50" placeholder="Type project narrative here"></textarea>
         <br>
@@ -68,6 +68,7 @@
         const accountType = '<%- accountType %>';
     </script>
     <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/sort-table.js"></script>
     <script src="/javascripts/agency.js"></script>
 </body>
 
