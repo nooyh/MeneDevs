@@ -1,13 +1,40 @@
-#siHeadDiv {
+#loginContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
-#siInputDiv {
+#rectContainer {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#rectangle {
+    background-color: white;
+    height: 60%;
+    width: 40%;
+}
+
+#nameInput {
+    width: 75%;
+}
+
+#passInput {
+    width: 75%;
 }
 
 #signup-container {

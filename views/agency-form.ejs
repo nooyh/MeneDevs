@@ -13,7 +13,7 @@
 <body>
     <section id="nav-bar" class="no-touch">
         <div id="bar">
-            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
         </div>
     </section>
     <div style="margin-top: 60px;"></div>
@@ -39,12 +39,14 @@
         <p>8. (If any) Tax Map Key Numbers</p>
         <input id="tmk" type="number" placeholder="Tax Map Key Numbers">
         <p>9. Project Phase <span style="color:red">*</span></p>
-        <div id="radioBtn">
-            <input id="prePlanning" type="radio" value="Pre-planning" name="phase">
-            <label id="prePlanningBtn" for="prePlanning">Pre-planning</label>
-            <input id="planning" type="radio" value="Planning" name="phase">
-            <label id="planningBtn" for="planning">Planning </label>
-        </div>
+        <select id="phaseDropDown" name="projectPhase" placeholder="Select One">
+            <option id="ddPlaceHolder" disabled selected>Select One</option>
+            <option value="prePlanning">Pre-Planning</option>
+            <option value="planning">Planning</option>
+            <option value="design">Designing</option>
+            <option value="construction">Construction</option>
+            <option value="completed">Completed</option>
+        </select>
         <p>10. Current Project Budget</p>
         <span class="input">$<input id="projectBudget" type="number" placeholder="Budget for current fiscal year"></span>
         <p>11. Project Status</p>

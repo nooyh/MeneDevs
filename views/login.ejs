@@ -14,29 +14,30 @@
     <!-----Navigation Bar----->
     <section id="nav-bar" class="no-touch">
         <div id="bar">
-            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
         </div>
     </section>
     <div style="margin-top: 60px;"></div>
 
     <!-----Main Body----->
-    <main>
-        <h1>Welcome Back!</h1>
-        <h2>Please log in</h2>
-        <form action="/login" method="post">
-            <input type="text" placeholder="Enter email" name="email" /><br />
-            <input type="password" placeholder="Enter password" name="pass" /><br /><br />
-            <div id="signup-container">
-                <p>
-                    Don't have an account?
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-                        rel="noopener noreferrer">Contact TOD</a>
-                </p>
-            </div>
-
-            <button type="submit">Login</button>
-        </form>
-    </main>
+    <div id="rectContainer">
+        <div id="rectangle">
+            <main id="loginContainer">
+                <h1 id="loginH1">Welcome Back!</h1>
+                <h2 id="loginH2">Please log in</h2>
+                <form id="formID" action="/login" method="post">
+                    <input id="nameInput" type="text" placeholder="Enter email" name="email" /><br />
+                    <input id="passInput" type="password" placeholder="Enter password" name="pass" /><br /><br />
+                    <div id="signup-container">
+                        <p>Don't have an account?
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Contact TOD</a>
+                        </p>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </main>
+        </div>
+    </div>
 
     <script>
         const accountType = '<%- accountType %>';

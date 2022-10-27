@@ -13,21 +13,15 @@
     <!-----Navigation Bar----->
     <section id="nav-bar" class="no-touch">
         <div id="bar">
-            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
         </div>
     </section>
     <div style="margin-top: 60px;"></div>
 
     <main>
-        <h1>
-            <%= message %>
-        </h1>
-        <h2>
-            <%= error.status %>
-        </h2>
-        <pre>
-            <%= error.stack %>
-        </pre>
+        <h1><%= message %></h1>
+        <h2><%= error.status %></h2>
+        <pre><%= error.stack %></pre>
         <p>Perhaps head back to <a href="/">home</a>?</p>
     </main>
 
