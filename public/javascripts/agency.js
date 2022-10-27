@@ -5,6 +5,13 @@ const submitReport = document.getElementById('submitReport');
 if (addReport) {
     linkTo(addReport, '/agency/new');
 
+    window.addEventListener('click', (event) => {
+        for (const btn of document.getElementsByClassName('dropbtn')) {
+            const dropdown = btn.parentElement.children[1];
+            dropdown.classList[event.target.value == btn.value ? 'toggle' : 'remove']('show');
+        }
+    });
+
     document.querySelectorAll(".table-content th").forEach(headerCell => {
         headerCell.addEventListener("click", _ => {
             const tableElement = headerCell.parentElement.parentElement.parentElement;
@@ -109,10 +116,3 @@ if (submitReport) {
         }
     });
 }
-
-window.addEventListener('click', (event) => {
-    for (const btn of document.getElementsByClassName('dropbtn')) {
-        const dropdown = btn.parentElement.children[1];
-        dropdown.classList[event.target.value == btn.value ? 'toggle' : 'remove']('show');
-    }
-});
