@@ -13,29 +13,30 @@ const checkAuthed = (req, res, next) => {
 
 /* GET all reports page. */
 router.get('/', checkAuthed, async (req, res, next) => {
-    const allReports = await db.getReportsFor(req?.user?.email || '');
-
+    const allReports = await db.getReportsFor(req?.user?.email || 'guntech@gmail.com');
     res.render('agency/view-reports', { accountType: 'agency', allReports });
 });
 
 /* GET specific report page */
-router.get('/:reportId', checkAuthed, (req, res, next) => {
-    const reportId = req.params.reportId;
+router.get('/report', checkAuthed, async (req, res, next) => {
+    const { agency, id, create } = req.query;
+    if (create) return res.render('agency/report', { accountType: 'agency', report: {} });
+    else if (!agency || !id) return next();
 
-    if (reportId == 'new') {
-        return res.render('agency/report', { accountType: 'agency' });
-    }
+    const report = await db.getReport(agency, id);
+    if (!report.agency) return next();
 
-    // i'll add functionality later - alohabeach
-
-    res.render('agency/report', { accountType: 'agency' });
+    res.render('agency/report', { accountType: 'agency', report });
 });
 
 /* POST create report */
-router.post('/new', checkAuthed, async (req, res, next) => {
-    if (!req.body.agency) return res.status(502).json("missing 'agency' from body");
+router.post('/report', checkAuthed, async (req, res, next) => {
+    const { create, report } = req.body;
+    if (!report) return res.status(502).json("missing 'agency' from body");
 
-    await db.createReport(req.body.agency, req.body);
+    if (create) await db.createReport(report.agency, report);
+    else await db.updateReport(report.agency, report.id, report);
+
     res.json('success');
 });
 

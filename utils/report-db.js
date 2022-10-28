@@ -48,7 +48,7 @@ module.exports = class ReportsDB extends DB {
      * 
      * @param {String} agency The agency tied to the report
      * @param {String} id The id of the report
-     * @returns Empty promise
+     * @returns Promised report info
      */
     getReport(agency, id) {
         if (typeof agency != 'string') throw new Error('Expected agency to be a string');
@@ -128,7 +128,9 @@ module.exports = class ReportsDB extends DB {
 
         const add = (object) => {
             for (const [key, value] of Object.entries(object)) {
-                params.Item[key] = { S: value.toString() };
+                if (value != null) {
+                    params.Item[key] = { S: value.toString() };
+                }
             }
         };
 

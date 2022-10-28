@@ -24,144 +24,17 @@
         <h1>Agency Home Page</h1>
         <div class="background">
             <table class="table-content">
-                <!-- Ask how to make an if statement for adding rows and columns. -->
                 <thead>
                     <tr class="no-touch">
                         <th></th>
-                        <th>Agency</th>
-                        <th>Project Name</th>
-                        <th>Date Created</th>
+                        <th id="projectName">Project Name</th>
+                        <th id="budget">Budget</th>
+                        <th id="phase">Phase</th>
+                        <th id="date">Date Created</th>
+                        <th></th>
                     </tr>
                 </thead>
-                <!--Example agency with filled out info-->
-                <tbody>
-                    <tr id="project1">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="1" src="/images/three-dots.png" />
-                                <div id="myDropdown1" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project2">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="2" src="/images/three-dots.png" />
-                                <div id="myDropdown2" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project3">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="3" src="/images/three-dots.png" />
-                                <div id="myDropdown3" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project4">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="4" src="/images/three-dots.png" />
-                                <div id="myDropdown4" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project5">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="5" src="/images/three-dots.png" />
-                                <div id="myDropdown5" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project6">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="6" src="/images/three-dots.png" />
-                                <div id="myDropdown6" class="dropdown-content">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                    <tr id="project7">
-                        <td>
-                            <div class="dropdown">
-                                <input class="dropbtn no-touch" type="image" value="7" src="/images/three-dots.png" />
-                                <div id="myDropdown7" class="dropdown-content" style="position: relative;">
-                                    <a href="#">Rename</a>
-                                    <a href="#">Remove</a>
-                                    <a href="#">Open in new tab</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Department of Water</td>
-                        <td>Kakaako Plumbing</td>
-                        <td>10/18/22</td>
-                        <td>
-                            <button>Open</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="main-table"></tbody>
             </table>
         </div>
         <button id="add-button">Add</button>
@@ -170,6 +43,7 @@
 
     <script>
         const accountType = '<%- accountType %>';
+        const allReports = JSON.parse('<%- JSON.stringify(allReports) %>');
     </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/sort-table.js"></script>
