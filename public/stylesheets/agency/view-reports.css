@@ -5,10 +5,41 @@ button {
 #add-button {
     height: 40px;
     width: 100px;
+    background-color: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    position: relative;
+    transition: 0.1s;
+}
+
+
+#add-button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#add-button:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+#add-button:hover:after {
+    opacity: 1;
+    right: 20px;
+    top: 10px;
 }
 
 button:hover {
     background-color: rgb(212, 207, 207);
+    cursor: pointer;
 }
 
 h1 {
@@ -25,10 +56,10 @@ h1 {
     background-color: white;
     margin: 25px 0;
     font-size: 1.2em;
-    min-width: 700px;
+    min-width: 1000px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px black;
+    /*box-shadow: 0 0 20px black;*/
 }
 
 .table-content thead tr {

@@ -63,10 +63,9 @@ body {
     background-color: white;
     margin: 25px 0;
     font-size: 1.2em;
-    min-width: 700px;
+    min-width: 1000px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px black;
 }
 
 .table-content thead tr {

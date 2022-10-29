@@ -62,7 +62,7 @@ if (addReport) {
             sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
         });
     });
-    sortTableByColumn(document.querySelector("table"), 2, false);
+    sortTableByColumn(document.querySelector("table"), 4, false);
 }
 
 // Report Page
@@ -124,7 +124,7 @@ if (submitReport) {
             if (required) {
                 if (key == 'email' && !emailRegex.test(input.value)) {
                     return alert('Please provide a valid email address.');
-                } else if (key == 'contact' && input.value.length != 13) {
+                } else if (key == 'contact' && input.value.length != 14) {
                     return alert(`Please provide a valid phone number.`);
                 } else if (input?.value == '') {
                     return alert(`Please fill out the ${key} field.`);
