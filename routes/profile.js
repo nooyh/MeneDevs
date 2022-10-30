@@ -14,4 +14,10 @@ router.get('/', checkAuthed, (req, res, next) => {
     res.render('profile', { accountType: req?.user?.type });
 });
 
+/* POST logout request */
+router.post('/', checkAuthed, (req, res, next) => {
+    req.logout(console.error);
+    res.redirect('/login');
+});
+
 module.exports = router;

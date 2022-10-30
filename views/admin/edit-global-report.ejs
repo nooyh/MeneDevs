@@ -5,11 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Edit Global Report</title>
     <link rel="stylesheet" href="/stylesheets/global/main.css" />
-    <link rel="stylesheet" href="/stylesheets/global/list.css" />
-
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/global/list.css">
+    <link rel="stylesheet" href="/stylesheets/admin/edit-global-report.css" />
 </head>
 
 <body>
@@ -23,28 +22,26 @@
     <div style="margin-top: 60px;"></div>
 
     <main>
-        <h1>Agency Home Page</h1>
-        <b><button id="add-button">Add</button></b>
-        <div class="background">
-            <table class="table-content">
-                <thead>
-                    <tr id="header-list" class="no-touch">
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="main-table"></tbody>
-            </table>
+        <h1>Edit Your Report</h1>
+        <p>Here, you can edit the global form that agencies fill out.</p>
+
+        <br>
+        <div id="questions"></div>
+        <br><br>
+        <div id="row">
+            <button id="add">Add</button>
+            <button id="save">Save</button>
         </div>
         <br><br><br>
     </main>
-    <div id="xlsx" hidden></div>
 
     <script>
         const accountType = '<%- accountType %>';
-        const allReports = JSON.parse('<%- JSON.stringify(allReports) %>');
         const questions = JSON.parse('<%- JSON.stringify(questions) %>');
     </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/table-init.js"></script>
-    <script src="/javascripts/agency.js"></script>
+    <script src="/javascripts/admin.js"></script>
 </body>
+
+</html>

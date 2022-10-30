@@ -24,8 +24,7 @@ module.exports = class DB {
     list(tableName) {
         if (typeof tableName != 'string') throw new Error('Expected tableName to be a string');
 
-        return { Items: [] };
-        // return this._parseList(this.dynamodb.scan({ TableName: tableName, ReturnConsumedCapacity: 'TOTAL' }).promise());
+        return this._parseList(this.dynamodb.scan({ TableName: tableName, ReturnConsumedCapacity: 'TOTAL' }).promise());
     }
 
     /**
@@ -65,8 +64,8 @@ module.exports = class DB {
      * @param {Object} info This holds the stuff ur putting in the DB
      * @param {String} info.TableName This is the name of the table (case sensistive)
      * @param {Object} info.Item This will hold ur actual data
-     * @param {String} info.Item.PARTITION_KEY_HERE This should be the name of ur primary sorter
-     * @param {String} info.Item.SORT_KEY_HERE This should be the name of ur range attribute
+     * @param {String} info.Item.ADD_PARTITION_KEY_HERE This should be the name of ur primary sorter
+     * @param {?String} info.Item.ADD_SORT_KEY_HERE (optional) This should be the name of ur range attribute
      * @returns AWS promised object
      */
     put(info) {
@@ -97,18 +96,16 @@ module.exports = class DB {
      * @param {String} info.TableName This is the name of the table (case sensitive)
      * @param {Object} info.ADD_TYPE_HERE The type should be 'Item' for put methods, 'Key' for get & delete methods
      * @param {String} info.ADD_TYPE_HERE.ADD_PARTITION_KEY_HERE This should be the name of ur primary sorter
-     * @param {String} info.ADD_TYPE_HERE.ADD_SORT_KEY_HERE This should be the name of ur range attribute
+     * @param {?String} info.ADD_TYPE_HERE.ADD_SORT_KEY_HERE (optional) This should be the name of ur range attribute
      * @returns AWS promised object
      */
     async _baseMethods(method, info) {
         if (typeof method != 'string') throw new Error('Expected method to be a string');
         if (typeof info != 'object') throw new Error('Expected info to be an object');
 
-        return {};
+        const response = await this.dynamodb[`${method}Item`](info).promise();
 
-        // const response = await this.dynamodb[`${method}Item`](info).promise();
-
-        // return response.Item ? this._parseItem(response.Item) : response;
+        return response.Item ? this._parseItem(response.Item) : response;
     }
 
     /**

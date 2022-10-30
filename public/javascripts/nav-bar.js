@@ -18,9 +18,9 @@ const makeNavBarBtn = (name, link, color) => {
 
 // populate navbar for admin and agency accounts
 if (accountType == 'admin') {
-    const logsPage = window.location.href.includes('logs');
-    makeNavBarBtn('Logs', '/admin/logs', logsPage && '#f7f7f7');
-    makeNavBarBtn('Edit Global Form', '/admin/edit', !logsPage && '#f7f7f7');
+    const href = window.location.href;
+    makeNavBarBtn('Home', '/admin', href.endsWith('/admin') && '#f7f7f7');
+    makeNavBarBtn('Edit Global Report', '/admin/edit', href.endsWith('/admin/edit') && '#f7f7f7');
 } else if (accountType == 'agency') {
     makeNavBarBtn('Home', '/agency');
 } else {

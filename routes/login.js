@@ -4,9 +4,8 @@ const router = express.Router();
 
 /* GET login. */
 router.get('/', (req, res, next) => {
-    if (req.isAuthenticated()) return res.redirect('/');
-
-    res.render('login', { accountType: req?.user?.type });
+    if (req.isAuthenticated()) res.redirect('/');
+    else res.render('login', { accountType: req?.user?.type });
 });
 
 /* POST login. */
