@@ -1,0 +1,102 @@
+.background {
+    display: flex;
+    justify-content: center;
+}
+
+.table-content {
+    border-collapse: collapse;
+    background-color: white;
+    margin: 25px 0;
+    font-size: 1.2em;
+    min-width: 95%;
+    border-radius: 10px 10px 0 0;
+    overflow: visible;
+}
+
+.table-content thead tr {
+    background-color: #37465F;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-content .th-sort-asc::after {
+    content: "\25b4";
+    margin-left: 5px;
+}
+
+.table-content .th-sort-desc::after {
+    content: "\25be";
+    margin-left: 5px;
+}
+
+.table-content th .table-content td {
+    padding: 12px 15px;
+}
+
+.table-content tbody tr {
+    border-bottom: 1px solid grey;
+}
+
+.table-content tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    height: 25px;
+    width: 10px;
+    background-color: none;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: rgb(212, 207, 207);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+.table-content tbody tr:last-of-type {
+    border-bottom: 5px solid #37465F;
+}

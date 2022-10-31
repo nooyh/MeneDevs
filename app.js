@@ -1,4 +1,5 @@
-if (process.env.NODE_ENV != 'production') require('dotenv').config();
+if (process.env.NODE_ENV == 'development') require('dotenv').config();
+else require('./utils/no-idle')('mene-devs');
 
 const createError = require('http-errors');
 const express = require('express');
@@ -18,8 +19,8 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -57,7 +58,7 @@ app.use((err, req, res, next) => {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('error', { accountType: req?.user?.type || 'guest' });
 });
 
 module.exports = app;

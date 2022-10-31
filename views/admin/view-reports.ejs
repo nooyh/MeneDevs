@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/stylesheets/global/main.css" />
+    <link rel="stylesheet" href="/stylesheets/global/list.css" />
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <!-----Navigation Bar----->
+    <section id="nav-bar" class="no-touch">
+        <div id="bar">
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
+        </div>
+        <h1 id="divider"></h1>
+    </section>
+    <div style="margin-top: 60px;"></div>
+
+    <main>
+        <h1>Admin Home Page</h1>
+        <div class="background">
+            <table class="table-content">
+                <thead>
+                    <tr id="header-list" class="no-touch">
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="main-table"></tbody>
+            </table>
+        </div>
+        <br><br><br>
+    </main>
+    <div id="xlsx" hidden></div>
+
+    <script>
+        const accountType = '<%- accountType %>';
+        const allReports = JSON.parse('<%- JSON.stringify(allReports) %>');
+        const questions = JSON.parse('<%- JSON.stringify(questions) %>');
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/table-init.js"></script>
+    <script src="/javascripts/admin.js"></script>
+</body>

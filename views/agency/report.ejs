@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/global/main.css">
+    <link rel="stylesheet" href="/stylesheets/global/report.css" />
+    <title>Report</title>
+</head>
+
+<body>
+    <!-----Navigation Bar----->
+    <section id="nav-bar" class="no-touch">
+        <div id="bar">
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
+        </div>
+        <h1 id="divider"></h1>
+    </section>
+    <div style="margin-top: 60px;"></div>
+
+    <div id="agencyFormQuestions">
+        <h1 id="agencyFormPageHeader">Submit a Report</h1>
+        <p>Please fill out the form with accurate information.</p>
+    </div>
+
+    <script>
+        const accountType = '<%- accountType %>';
+        const report = JSON.parse('<%- JSON.stringify(report) %>');
+        const questions = JSON.parse('<%- JSON.stringify(questions) %>');
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/table-init.js"></script>
+    <script src="/javascripts/agency.js"></script>
+</body>
+
+</html>
